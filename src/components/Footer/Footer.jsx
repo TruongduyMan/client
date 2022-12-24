@@ -53,6 +53,7 @@ const Footer = () =>{
                 <div className="left">
                     <span className="logo">CAT SOTRE</span>
                     <sapn className="copyright">© Copyright 2023. All Rights Reserved</sapn>
+                    <span className="webTest">This is just demo website</span>
                 </div>
                 <div className="right">
                     <img src="/img/payment.png" alt=""></img>

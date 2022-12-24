@@ -1,10 +1,9 @@
 import React from "react";
 import Card from "../Card/Card";
-import "./FeatureProducts.scss";
+import "./List.scss";
 
-
-const FeatureProducts = ({type}) =>{
-    const data = [
+const List = () =>{
+    const data =[
         {
             id:1,
             img:"https://i.pinimg.com/564x/9c/25/d6/9c25d6c36df14745ec405223ef3fb1e5.jpg",
@@ -43,23 +42,14 @@ const FeatureProducts = ({type}) =>{
         },
         
     ];
-    
+
     return (
-        <div className="featureProducts">
-            <div className="top">
-                <h1>{type} products</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Eius architecto nisi, officia commodi molestiae quis iste fuga accusamus fugiat, 
-                    saepe rem corrupti. 
-                    Explicabo, a ipsum eius ipsam tempore molestias quisquam.</p>
-            </div>
-            <div className="bottom">
-                {data.map(item => (
-                    <Card item={item} key={item.id}/>
-                ))}
-            </div>
+        <div className="list">
+            {data.map(item => (
+                <Card item={item} key={item.id}/>
+            ))}
         </div>
     )
 };
 
-export default FeatureProducts;
+export default List;

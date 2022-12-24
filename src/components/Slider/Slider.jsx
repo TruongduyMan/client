@@ -9,9 +9,9 @@ const Slider = () =>{
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const data = [
-        "https://initiate.alphacoders.com/images/107/stretched-1920-1080-1076577.jpg?310",
-        "https://images2.alphacoders.com/190/190302.jpg",
-        "https://initiate.alphacoders.com/images/337/stretched-1920-1080-337135.jpg?2943"
+        "https://www.fashiongonerogue.com/wp-content/uploads/2020/08/Women-Red-Pantsuit-Heels-Outside.jpg",
+        "https://media.glamour.com/photos/5e7bf8766a2fa300087f0786/master/pass/GettyImages-1210591136.jpg",
+        "https://www.stylebysavina.com/wp-content/uploads/2021/06/fall-outfits-for-women-2021-1024x683.png"
     ];
     
     const prevSlide = () =>{
