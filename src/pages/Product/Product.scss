@@ -35,5 +35,101 @@
 
     .right{
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .price{
+            font-size: 30px;
+            color: blue;
+            font-weight: 500;
+        }
+
+        p{
+            font-size: 16px;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .quantity{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button{
+                display: flex;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                align-items: center;
+                border: none;
+            }
+        }
+
+        .add{
+            display: flex;
+            width: 250px;
+            justify-content: center; 
+            font-weight: 500;
+            padding: 10px;
+            background-color: #2879fe;
+            color: white;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .links{
+            display: flex;
+            gap: 20px;
+            
+            .item{
+                display: flex;
+                font-weight: 500;
+                color: #2879fe;
+                cursor: pointer;
+                padding: 10px;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                font-size: 14px;
+            }
+        }
+
+        .info{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: gray;
+            font-size: 14px;
+            margin-top: 34px;
+
+            hr{
+                width: 200px;
+                border: 1px solid lightgrey;
+            }
+
+        }
+
+        hr{
+                border: 1px solid lightgrey;
+            }
+            
+
+        .details{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: gray;
+            font-size: 16px;
+
+            hr{
+                width: 200px;
+                border: 1px solid lightgrey;
+            }
+            
+        }
     }
 }
