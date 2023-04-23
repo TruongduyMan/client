@@ -9,9 +9,9 @@ const Slider = () =>{
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const data = [
-        "https://www.fashiongonerogue.com/wp-content/uploads/2020/08/Women-Red-Pantsuit-Heels-Outside.jpg",
-        "https://media.glamour.com/photos/5e7bf8766a2fa300087f0786/master/pass/GettyImages-1210591136.jpg",
-        "https://www.stylebysavina.com/wp-content/uploads/2021/06/fall-outfits-for-women-2021-1024x683.png"
+        "https://i.redd.it/cfg3c3dhtyb81.jpg",
+        "https://product.hstatic.net/200000538213/product/1_3688eff6dba944e188ad2d317984c843.jpg",
+        "https://pbs.twimg.com/media/EkTrrfkXcAML7oz.jpg:large"
     ];
     
     const prevSlide = () =>{

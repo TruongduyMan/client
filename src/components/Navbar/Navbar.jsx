@@ -23,25 +23,30 @@ const Navbar = () =>{
                     </div>
                     <div className="item">
                         <span>USD</span>
+                        <span>VND</span>
                         <KeyboardArrowDownIcon/>
                     </div>
                     
                     <div className="item">
-                        <Link className="link" to="/products/1">Women</Link>
+                        <Link className="link" to="/products/1">Keyboard</Link>
                     </div>
                     
                     <div className="item">
-                        <Link className="link" to="/products/2">Men</Link>
+                        <Link className="link" to="/products/2">Switch</Link>
                     </div>
                     
                     <div className="item">
-                        <Link className="link" to="/products/3">Chidren</Link>
+                        <Link className="link" to="/products/3">Acesssory</Link>
+                    </div>
+                    
+                    <div className="item">
+                        <Link className="link" to="/products/3">Keycap</Link>
                     </div>
                     
                 </div>
                 
                 <div className="center">
-                    <Link className="link" to="/">CAT STORE</Link>
+                    <Link className="link" to="/">KEEBS SHOP</Link>
                 </div>
 
                 <div className="right">

@@ -8,9 +8,9 @@ const Footer = () =>{
                 
                 <div className="item">
                     <h1>Category</h1>
-                    <span>Women</span>
-                    <span>Men</span>
-                    <span>Shoes</span>
+                    <span>Keyboard</span>
+                    <span>Keycap</span>
+                    <span>Switch</span>
                     <span>Accessory</span>
                     <span>New Arrivals</span>
 
@@ -21,7 +21,7 @@ const Footer = () =>{
                     <span>FAQ</span>
                     <span>Pages</span>
                     <span>Stores</span>
-                    <span>Compare</span>
+                    <span>Service</span>
                     <span>Cokkies</span>
                     
                 </div>
@@ -51,7 +51,7 @@ const Footer = () =>{
 
             <div className="bottom">
                 <div className="left">
-                    <span className="logo">CAT SOTRE</span>
+                    <span className="logo">KEEBS SHOP</span>
                     <sapn className="copyright">© Copyright 2023. All Rights Reserved</sapn>
                     <span className="webTest">This is just demo website</span>
                 </div>
