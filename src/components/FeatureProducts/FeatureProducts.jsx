@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import "./FeatureProducts.scss";
-import axios from 'axios';
+import axios from "axios";
 
 const FeatureProducts = ({type}) =>{
        
 const [data, setData] = useState([]);
 
 useEffect(() =>{
-    const fetchData = async() =>{
+    const fetchData = async () =>{
         try {
-            const res = await axios.get(process.env.REACT_APP_API_URL + "/products", {
-                headers:{Authorization:"bearer" + process.env.REACT_APP_API_TOKEN,}
+            const res = await axios.get(process.env.URL + "/products", 
+            {
+                headers:{Authorization:"bearer" + process.env.TOKEN}
             });
+
             setData(res.data.data);
         } catch (error) {
             console.log(error);
