@@ -11,7 +11,7 @@ const Home = () => {
             <Slider/>
             <FeatureProducts type="feature"/>
             <Categories/>
-            <FeatureProducts type="trending"/>
+            <FeatureProducts type="group-by"/>
             <Contact/>
         </div>
     )

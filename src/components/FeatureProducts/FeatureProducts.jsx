@@ -10,7 +10,7 @@ const [data, setData] = useState([]);
 useEffect(() =>{
     const fetchData = async () =>{
         try {
-            const res = await axios.get(process.env.URL + "/products", 
+            const res = await axios.get(process.env.URL + "/products?populate=*", 
             {
                 headers:{Authorization:"bearer" + process.env.TOKEN}
             });
@@ -22,7 +22,7 @@ useEffect(() =>{
     };
     fetchData();
 }, []);
-
+console.log(data);
     return (
         <div className="featureProducts">
             <div className="top">
