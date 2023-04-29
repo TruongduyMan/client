@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Card/Card";
 import "./FeatureProducts.scss";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../hooks/useFetch";
 
 const FeatureProducts = ({type}) =>{
     
