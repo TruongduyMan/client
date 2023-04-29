@@ -1,28 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Card from "../Card/Card";
 import "./FeatureProducts.scss";
-import axios from "axios";
+import useFetch from "../../hooks/useFetch";
 
 const FeatureProducts = ({type}) =>{
-       
-const [data, setData] = useState([]);
-
-useEffect(() =>{
-    const fetchData = async () =>{
-        try {
-            const res = await axios.get(process.env.URL + "/products?populate=*", 
-            {
-                headers:{Authorization:"bearer" + process.env.TOKEN}
-            });
-
-            setData(res.data.data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    fetchData();
-}, []);
-console.log(data);
+    
+    const {data, loading, error} = useFetch(`/products?populate=*&[filters] [type] [$eq]=${type}`);
     return (
         <div className="featureProducts">
             <div className="top">
@@ -33,7 +16,9 @@ console.log(data);
                     Explicabo, a ipsum eius ipsam tempore molestias quisquam.</p>
             </div>
             <div className="bottom">
-                {data.map(item => (
+                {loading 
+                ? "loading" 
+                :data.map(item => (
                     <Card item={item} key={item.id}/>
                 ))}
             </div>
