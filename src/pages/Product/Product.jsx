@@ -4,42 +4,47 @@ import "./Product.scss";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BalanceIcon from '@mui/icons-material/Balance';
+import useFetch from '../../hooks/useFetch';
+import { useParams } from 'react-router-dom';
 
 const Product = () => {
-    const [selectImg, setSelectImg] = useState(0);
+    const id = useParams().id;
+
+    const [selectImg, setSelectImg] = useState("img");
     const [quantity, setQuantity] = useState(1);
 
-    const image = [
-        "https://i.pinimg.com/564x/1a/2b/b1/1a2bb18f1d3b02d05c6cdfdabda3f645.jpg",
-        "https://i.pinimg.com/564x/63/64/bc/6364bc327cf8c6ea052eabdb84d539cc.jpg",
-        "https://i.pinimg.com/564x/d4/86/a6/d486a68cf69911895296f83dd5728d38.jpg",
-    ];
+    const {data, loading, error} = useFetch(`/products/${id}?populate=*`
+    
+    );
 
     return (
         <div className='product'>
-            <div className="left">
+            {loading 
+            ?("loading") 
+            : error 
+            ? "Something went wrong?" : (<><div className="left">
                 <div className="images">
-                    <img src={image[0]} alt="" onClick={e => setSelectImg(0)}/>
-                    <img src={image[1]} alt="" onClick={e => setSelectImg(1)}/>
-                    <img src={image[2]} alt="" onClick={e => setSelectImg(2)}/>
+                    <img 
+                    src={process.env.REACT_APP_API_UPLOAD_URL + data?.attributes?.img?.data?.attributes?.url} alt="" onClick={e => setSelectImg("img")}/>
+                    <img 
+                    src={process.env.REACT_APP_API_UPLOAD_URL + data?.attributes?.img1?.data?.attributes?.url} alt="" onClick={e => setSelectImg("img1")}/>
+                    <img 
+                    src={process.env.REACT_APP_API_UPLOAD_URL + data?.attributes?.img2?.data?.attributes?.url} alt="" onClick={e => setSelectImg("img2")}/>
             
                 </div>
                 
                 <div className="mainImg">
-                    <img src={image[selectImg]} alt="" />
+                    <img 
+                    src={process.env.REACT_APP_API_UPLOAD_URL + data?.attributes[selectImg]?.data?.attributes?.url} alt="" />
                 </div>
             </div>
             
             <div className="right">
-                <h1>SWEATER SLEEVE</h1>
+                <h1>{data?.attributes?.title}</h1>
 
-                <span className='price'>$18</span>
+                <span className='price'>${data?.attributes?.price}</span>
                 
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    Sed distinctio saepe ipsa eligendi blanditiis tempora veritatis, 
-                    inventore architecto facilis dignissimos, velit nulla dicta repudiandae animi eos, 
-                    dolorum in voluptatibus ipsum!
-                </p>
+                <p>{data?.attributes?.description}</p>
 
                 <div className="quantity">
                     <button onClick={() => setQuantity((prev)=> prev === 1 ? 1 : prev - 1)}>-</button>
@@ -62,9 +67,9 @@ const Product = () => {
                 </div>
                 
                 <div className="info">
-                    <span>Vendor : Sweater</span>
-                    <span>Product-Type : T-shirt</span>
-                    <span>Tag : T-Shirt, Sweater, Neve-Top</span>
+                    <span>Vendor : {data?.attributes?.title}</span>
+                    <span>Product-Type : {data?.attributes?.type}</span>
+                    <span>Tag : {data?.attributes?.category}</span>
                 </div>
                 <hr/>
                 <div className="details">
@@ -74,7 +79,8 @@ const Product = () => {
                     <hr/>
                     <span>FAQ</span>
                 </div>
-            </div>
+            </div></>
+            )}
         </div>
     )
 };

@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 const FeatureProducts = ({type}) =>{
     
-    const {data, loading, error} = useFetch(`/products?populate=*&[filters] [type] [$eq]=${type}`);
+    const {data, loading, error} = useFetch(`http://localhost:1337/api/products?populate=*&[filters][type][$eq]=${type}`);
 
     return (
         <div className="featureProducts">
@@ -17,10 +17,12 @@ const FeatureProducts = ({type}) =>{
                     Explicabo, a ipsum eius ipsam tempore molestias quisquam.</p>
             </div>
             <div className="bottom">
-                {loading 
+                {error 
+                ? "Something went wrong :(" 
+                : loading 
                 ? "loading" 
-                :data.map(item => (
-                    <Card item={item} key={item.id}/>
+                : data?.map((item) => (
+                    <Card item={item} key={item.id} />
                 ))}
             </div>
         </div>

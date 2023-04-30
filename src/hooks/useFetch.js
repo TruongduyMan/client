@@ -7,24 +7,20 @@ const useFetch = (url) =>{
     const [loading, setLoading] = useState(false);
 
     useEffect(() =>{
-        const fetchData = async() =>{setLoading(true)
+        const fetchData = async () => {
             try {
-                const res = await makeRequest.get(url, {
-                })
+                setLoading(true);
+                const res = await makeRequest.get(url);
                 setData(res.data.data);
-                
             } catch (error) {
-                setLoading(false);
-                setError(error);
-
+                setError(true);
             }
             setLoading(false);
-
         }
-        fetchData();
-    }, [url]);
+        fetchData()
+    }, [url])
     
-    return {loading, error, data}
-}
+    return { data, error, loading };
+};
 
 export default useFetch;

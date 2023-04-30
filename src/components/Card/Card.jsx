@@ -9,6 +9,7 @@ const Card = ({item}) =>{
                 <div className="image">
                     {item?.attributes.isNew && <span>New Arrival</span>}
                     <img src={process.env.REACT_APP_API_UPLOAD_URL + item.attributes?.img?.data?.attributes?.url} alt="" className="mainImg" />
+
                     <img src={process.env.REACT_APP_API_UPLOAD_URL + item.attributes?.img2?.data?.attributes?.url} alt="" className="secondImg" />
                 </div>
                 <h2>{item?.attributes.title}</h2>
