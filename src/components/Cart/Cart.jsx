@@ -18,7 +18,7 @@ const Cart = () =>{
             total += item.quantity * item.price
             
         });
-        return total.toFixed(2);
+        return total.toFixed(2); 
     }
     
     
@@ -51,7 +51,7 @@ const Cart = () =>{
                     <DeleteOutlineIcon className="delete" onClick={()=> dispatch(removeItem(item.id))}/>
                 </div>
             ))}
-            
+             
             <div className="total">
                 <span>TOTAL</span>
                 <span>{totalPrice()}</span>
