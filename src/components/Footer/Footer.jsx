@@ -52,7 +52,7 @@ const Footer = () =>{
             <div className="bottom">
                 <div className="left">
                     <span className="logo">KEEBS SHOP</span>
-                    <sapn className="copyright">© Copyright 2023. All Rights Reserved</sapn>
+                    <span className="copyright">© Copyright 2023. All Rights Reserved</span>
                     <span className="webTest">This is just demo website</span>
                 </div>
                 <div className="right">
